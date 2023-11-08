@@ -1,12 +1,19 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 function App() {
-  // const [count, setCount] = useState(0)
+  
+  const [inputValue, setInputValue] = useState('')
+  
+  const handleClick = useCallback(
+    () => { setInputValue(JSON.stringify(1)), console.log('aaaaa');
+     },
+    []
+  )
 
   return (
     <>
       <div className='calculatrice'>
-        <input className='input'></input>
+        <input className='input' value={inputValue} ></input>
         <div className='ligneUne ligne'>
           <button>7</button>
           <button>8</button>
@@ -20,7 +27,7 @@ function App() {
           <button>+</button>
         </div>
         <div className='ligneTrois ligne'>
-          <button>1</button>
+          <button className='button' onClick={handleClick}>1</button>
           <button>2</button>
           <button>3</button>
           <button>=</button>
