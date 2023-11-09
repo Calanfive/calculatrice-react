@@ -1,19 +1,19 @@
 import { useCallback, useState } from 'react'
+import Bouton from './Component/Bouton'
 
 function App() {
-  
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState<string>()
   
   const handleClick = useCallback(
-    () => { setInputValue(JSON.stringify(1)), console.log('aaaaa');
+    () => { setInputValue(JSON.stringify(1))
      },
-    []
+    [inputValue]
   )
 
   return (
     <>
       <div className='calculatrice'>
-        <input className='input' value={inputValue} ></input>
+        <div className='input'>{inputValue}</div>
         <div className='ligneUne ligne'>
           <button>7</button>
           <button>8</button>
@@ -27,7 +27,7 @@ function App() {
           <button>+</button>
         </div>
         <div className='ligneTrois ligne'>
-          <button className='button' onClick={handleClick}>1</button>
+          <Bouton onClicked={handleClick}/>
           <button>2</button>
           <button>3</button>
           <button>=</button>
