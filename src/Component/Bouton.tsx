@@ -1,11 +1,12 @@
 import { useCallback} from "react";
 
-const Bouton = (props: { onClicked: (numb: string) => void 
+const Bouton = (props: {
+    value: string; onClicked: (numb: string,) => void 
 }) => {
 
     const handleClick = useCallback(
         () => {
-            props.onClicked('');
+            props.onClicked(props.value);
             console.log('link');
             
         }, [props.onClicked]

@@ -15,9 +15,9 @@ function App() {
       <div className='calculatrice'>
         <div className='input'>{inputValue}</div>
         <div className='ligneUne ligne'>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
+        <Bouton value={'9'} onClicked={handleClick} />
+        <Bouton value={'8'} onClicked={handleClick} />
+        <Bouton value={'7'} onClicked={handleClick} />
           <button>-</button>
         </div>
         <div className='ligneDeux ligne'>
@@ -27,7 +27,7 @@ function App() {
           <button>+</button>
         </div>
         <div className='ligneTrois ligne'>
-          <Bouton onClicked={handleClick}/>
+          <Bouton value={'1'} onClicked={handleClick}/>
           <button>2</button>
           <button>3</button>
           <button>=</button>
