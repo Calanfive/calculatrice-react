@@ -1,22 +1,21 @@
 import { useCallback} from "react";
 
 const Bouton = (props: {
-    value: string; onClicked: (numb: string,) => void 
+    valueParent: string; onClickedParent: (numb: string,) => void 
 }) => {
 
-    const handleClick = useCallback(
+    const handleClickChild = useCallback(
         () => {
-            props.onClicked(props.value);
-            console.log('link');
+            props.onClickedParent(props.valueParent);
+            console.log(props.valueParent);
             
-        }, [props.onClicked]
+        }, [props.onClickedParent]
     
     );
 
     return (
-        <button className='button' onClick={handleClick}>1</button>
+        <button className='button' onClick={handleClickChild}></button>
     );
 };
 
 export default Bouton;
-
