@@ -1,7 +1,7 @@
 import { useCallback} from "react";
 
 const Bouton = (props: {
-    valueParent: string; onClickedParent: (numb: string,) => void 
+    valueParent: number; onClickedParent: (numb: number,) => void 
 }) => {
 
     const handleClickChild = useCallback(
@@ -14,7 +14,9 @@ const Bouton = (props: {
     );
 
     return (
-        <button className='button' onClick={handleClickChild}></button>
+        <button className='button' onClick={handleClickChild}>
+            {props.valueParent}
+        </button>
     );
 };
 
